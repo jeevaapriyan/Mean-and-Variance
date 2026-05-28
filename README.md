@@ -53,31 +53,33 @@ It shows the distance of a random variable from its mean. It is calcualted as
 
 ```
 import numpy as np
-L=[int(i) for i in input().split()]
-N=len(L); M=max(L) 
-x=list();f=list()
-for i in range (M+1):
-    c = 0
-    for j in range(N):
-        if L[j]==i:
-            c=c+1
-    f.append(c)
-    x.append(i)
-sf=np.sum(f)
-p=list()
-for i in range(M+1):
-    p.append(f[i]/sf) 
-mean=np.inner(x,p)
-EX2=np.inner(np.square(x),p)
-var=EX2-mean**2 
-SD=np.sqrt(var)
-print("The Mean arrival rate is %.3f "%mean)
-print("The Variance of arrival from feeder is %.3f "%var) 
-print("The Standard deviation of arrival from feeder is %.3F "%SD)
+n = int(input("Enter the value of n : "))
+print("Value of n =", n)
+InputVal = {}
+for i in range(1, n+1):
+val = int(input(f"Enter the value no {i} : "))
+try:
+InputVal[val] += 1
+except:
+InputVal[val] = 1
+print(f"{i} Values Collected Successfully")
+mean = 0
+for key, val in InputVal.items():
+mean += key*(val/n)
+print(f"Mean = {mean:.3f}")
+ex2 = 0
+for key, val in InputVal.items():
+ex2 += ((key**2) * val/n)
+var = ex2 - mean**2
+print(f"Variance : {var:.3f}")
+from math import sqrt
+sdtDeviation = sqrt(var)
+print(f"Standard Deviation = {sdtDeviation:.3f}")
 ```
 # Output : 
 
-<img width="570" height="113" alt="image" src="https://github.com/user-attachments/assets/4ccae45c-5a60-4e98-86d6-5a43957fbb27" />
+<img width="1057" height="345" alt="Screenshot 2026-05-28 202506" src="https://github.com/user-attachments/assets/bf05b251-7f4e-40e0-9bc6-507bdb890a4d" />
+
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
