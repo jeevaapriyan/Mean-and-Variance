@@ -1,5 +1,5 @@
-## Name : DEVESH S
-## Register Number : 212223230041
+## Name : JEEVAAPRIYAN M
+## Register Number : 212225040147
 
 #  Mean and variance of a discrete  distribution
 
